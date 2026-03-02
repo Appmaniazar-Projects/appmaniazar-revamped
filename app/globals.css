@@ -188,6 +188,15 @@
   }
 }
 
+@keyframes slide-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .animate-fade-up {
   animation: fade-up 0.8s ease-out both;
 }
@@ -222,6 +231,10 @@
 
 .animate-dash-flow {
   animation: dash-flow 1s linear infinite;
+}
+
+.animate-slide-logos {
+  animation: slide-logos 20s linear infinite;
 }
 
 .delay-100 { animation-delay: 0.1s; }

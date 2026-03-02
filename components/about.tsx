@@ -66,12 +66,33 @@ export function About() {
             </div>
 
             {/* Logos strip */}
-            <div className="mt-8 p-6 rounded-2xl border border-border bg-card">
+            <div className="mt-8 p-6 rounded-2xl border border-border bg-card overflow-hidden">
               <p className="text-xs text-muted-foreground uppercase tracking-widest mb-5 text-center">Trusted by businesses across South Africa</p>
-              <div className="flex items-center justify-center gap-8 flex-wrap opacity-50">
-                {["ZiboneleFM", "PlanetGuardian", "Lindwa Comms", "George Chamber"].map((name) => (
-                  <span key={name} className="text-sm font-semibold text-muted-foreground tracking-wide">{name}</span>
-                ))}
+              <div className="relative">
+                <div className="flex animate-slide-logos items-center">
+                  {[
+                    "/partner images/Zibonele - Logo.jpg",
+                    "/partner images/MSI - Logo.jpeg", 
+                    "/partner images/LC - Logo.jpg",
+                    "/partner images/BMC - Logo.jpg",
+                    "/partner images/Ponontle - Logo.jpg",
+                    "/partner images/Zibonele - Logo.jpg",
+                    "/partner images/MSI - Logo.jpeg",
+                    "/partner images/LC - Logo.jpg", 
+                    "/partner images/BMC - Logo.jpg",
+                    "/partner images/Ponontle - Logo.jpg"
+                  ].map((src, index) => (
+                    <div key={index} className="flex-shrink-0 px-8">
+                      <Image 
+                        src={src} 
+                        alt={`Partner logo ${index + 1}`}
+                        width={120}
+                        height={60}
+                        className="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
