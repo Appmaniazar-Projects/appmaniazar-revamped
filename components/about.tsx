@@ -54,20 +54,22 @@ export function About() {
         </div>
 
         {/* About + Contact split */}
-        <div className="grid lg:grid-cols-5 gap-12 items-start">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
           {/* Left: Brand system diagram */}
           <div className={`lg:col-span-3 ${isVisible ? "animate-fade-up delay-400" : "opacity-0"}`}>
-            <div className="p-8 rounded-2xl border border-border glow-border">
-              <h3 className="text-lg font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}>
+            <div className="p-6 lg:p-8 rounded-2xl border border-border glow-border">
+              <h3 className="text-base lg:text-lg font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}>
                 Our Development Ecosystem
               </h3>
-              <p className="text-sm text-foreground/80 mb-8">How we connect every phase of your project into one unified system.</p>
-              <BrandSystemDiagram />
+              <p className="text-xs lg:text-sm text-foreground/80 mb-6 lg:mb-8">How we connect every phase of your project into one unified system.</p>
+              <div className="w-full overflow-x-auto">
+                <BrandSystemDiagram />
+              </div>
             </div>
 
             {/* Logos strip */}
-            <div className="mt-8 p-6 rounded-2xl border border-border glow-border overflow-hidden">
-              <p className="text-xs text-foreground/60 uppercase tracking-widest mb-5 text-center">Trusted by businesses across South Africa</p>
+            <div className="mt-6 lg:mt-8 p-4 lg:p-6 rounded-2xl border border-border glow-border overflow-hidden">
+              <p className="text-xs text-foreground/60 uppercase tracking-widest mb-3 lg:mb-5 text-center">Trusted by businesses across South Africa</p>
               <div className="relative">
                 <div className="flex animate-slide-logos items-center">
                   {[
@@ -82,13 +84,13 @@ export function About() {
                     "/partner images/BMC - Logo.jpg",
                     "/partner images/Ponontle - Logo.jpg"
                   ].map((src, index) => (
-                    <div key={index} className="flex-shrink-0 px-8">
+                    <div key={index} className="flex-shrink-0 px-4 lg:px-8">
                       <Image 
                         src={src} 
                         alt={`Partner logo ${index + 1}`}
-                        width={120}
-                        height={60}
-                        className="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                        width={100}
+                        height={50}
+                        className="h-8 lg:h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
                       />
                     </div>
                   ))}
@@ -98,18 +100,18 @@ export function About() {
           </div>
 
           {/* Right: Contact cards */}
-          <div className={`lg:col-span-2 flex flex-col gap-4 ${isVisible ? "animate-slide-left delay-300" : "opacity-0"}`}>
-            <ContactCard icon={<MapPin size={18} />} title="Cape Town Office" lines={["19 Brug Street, Triangle", "Bellville, Cape Town"]} accentColor="#1a6dff" />
-            <ContactCard icon={<MapPin size={18} />} title="George Office" lines={["8 St. John's Street", "Dormehls Drift, George, 6529"]} accentColor="#8ecfff" />
-            <ContactCard icon={<Mail size={18} />} title="Email Us" lines={["info@appmaniazar.co.za"]} href="mailto:info@appmaniazar.co.za" accentColor="#f5c518" />
-            <ContactCard icon={<Phone size={18} />} title="Call Us" lines={["+27 21 023 1016"]} href="tel:+27210231016" accentColor="#e85d75" />
+          <div className={`lg:col-span-2 flex flex-col gap-3 lg:gap-4 ${isVisible ? "animate-slide-left delay-300" : "opacity-0"}`}>
+            <ContactCard icon={<MapPin size={16} />} title="Cape Town Office" lines={["19 Brug Street, Triangle", "Bellville, Cape Town"]} accentColor="#1a6dff" />
+            <ContactCard icon={<MapPin size={16} />} title="George Office" lines={["8 St. John's Street", "Dormehls Drift, George, 6529"]} accentColor="#8ecfff" />
+            <ContactCard icon={<Mail size={16} />} title="Email Us" lines={["info@appmaniazar.co.za"]} href="mailto:info@appmaniazar.co.za" accentColor="#f5c518" />
+            <ContactCard icon={<Phone size={16} />} title="Call Us" lines={["+27 21 023 1016"]} href="tel:+27210231016" accentColor="#e85d75" />
 
             {/* Small CTA */}
             <a 
               href="mailto:info@appmaniazar.co.za?subject=Project%20Inquiry%20-%20About%20Page&body=Hi%20Appmaniazar%20Team,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.%0A%0ABest%20regards"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-blue text-white font-semibold text-sm btn-glow glow-border transition-all"
+              className="mt-2 lg:mt-2 flex items-center justify-center gap-2 px-4 lg:px-6 py-3 lg:py-3.5 rounded-xl bg-brand-blue text-white font-semibold text-xs lg:text-sm btn-glow glow-border transition-all"
             >
               Start a Conversation
             </a>
@@ -125,15 +127,15 @@ function ContactCard({ icon, title, lines, href, accentColor }: { icon: React.Re
   return (
     <Wrapper
       {...(href ? { href } : {})}
-      className="group flex items-start gap-4 p-5 rounded-xl border border-border glow-border hover:border-brand-blue/20 transition-all duration-300"
+      className="group flex items-start gap-3 lg:gap-4 p-4 lg:p-5 rounded-xl border border-border glow-border hover:border-brand-blue/20 transition-all duration-300"
     >
-      <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center glow-border" style={{ background: `${accentColor}12`, color: accentColor }}>
+      <div className="flex-shrink-0 w-8 lg:w-10 h-8 lg:h-10 rounded-lg flex items-center justify-center glow-border" style={{ background: `${accentColor}12`, color: accentColor }}>
         {icon}
       </div>
       <div>
-        <div className="text-sm font-semibold text-foreground mb-0.5">{title}</div>
+        <div className="text-xs lg:text-sm font-semibold text-foreground mb-0.5">{title}</div>
         {lines.map((line) => (
-          <div key={line} className="text-sm text-foreground/80">{line}</div>
+          <div key={line} className="text-xs lg:text-sm text-foreground/80">{line}</div>
         ))}
       </div>
     </Wrapper>

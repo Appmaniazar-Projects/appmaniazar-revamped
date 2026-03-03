@@ -4,7 +4,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { useState } from "react"
 import { ArrowUpRight } from "lucide-react"
 
-const categories = ["All", "Dashboards & CRMs", "Web Development", "Apps Development", "Digital Skills Training"]
+const categories = ["All", "Dashboards & CRMs", "Web Development", "App Development", "Digital Skills Training"]
 
 const projects = [
   {
@@ -81,7 +81,7 @@ const projects = [
   },
   {
     title: "Zibonele FM App",
-    category: "Apps Development",
+    category: "App Development",
     description:
       "Cross-platform mobile application for Zibonele FM radio station — featuring live streaming, show schedules, and interactive listener engagement features.",
     outcome: "Radio Mobile Experience",
@@ -90,7 +90,7 @@ const projects = [
   },
   {
     title: "Tapps Dam Level Management",
-    category: "Apps Development",
+    category: "App Development",
     description:
       "Mobile application for dam level monitoring across all provinces — featuring real-time geolocation tracking, weather integration, and comprehensive water management analytics.",
     outcome: "National Water Management System",
