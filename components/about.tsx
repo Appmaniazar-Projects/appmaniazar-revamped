@@ -41,14 +41,14 @@ export function About() {
             { icon: <Zap size={22} />, title: "Systems Thinking", desc: "We engineer interconnected systems — not isolated products — so everything works together.", color: "#f5c518" },
             { icon: <Shield size={22} />, title: "Quality First", desc: "Clean code, robust architecture, and rigorous testing. We deliver work we are proud of.", color: "#e85d75" },
           ].map((item) => (
-            <div key={item.title} className="group p-6 rounded-2xl border border-border bg-card hover:border-brand-blue/20 transition-all duration-300 hover:-translate-y-1">
-              <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: `${item.color}12`, color: item.color }}>
+            <div key={item.title} className="group p-6 rounded-2xl border border-border glow-border hover:border-brand-blue/20 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 glow-border" style={{ background: `${item.color}12`, color: item.color }}>
                 {item.icon}
               </div>
               <h3 className="text-base font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}>
                 {item.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              <p className="text-sm text-foreground/80 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -57,17 +57,17 @@ export function About() {
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           {/* Left: Brand system diagram */}
           <div className={`lg:col-span-3 ${isVisible ? "animate-fade-up delay-400" : "opacity-0"}`}>
-            <div className="p-8 rounded-2xl border border-border bg-card">
+            <div className="p-8 rounded-2xl border border-border glow-border">
               <h3 className="text-lg font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}>
                 Our Development Ecosystem
               </h3>
-              <p className="text-sm text-muted-foreground mb-8">How we connect every phase of your project into one unified system.</p>
+              <p className="text-sm text-foreground/80 mb-8">How we connect every phase of your project into one unified system.</p>
               <BrandSystemDiagram />
             </div>
 
             {/* Logos strip */}
-            <div className="mt-8 p-6 rounded-2xl border border-border bg-card overflow-hidden">
-              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-5 text-center">Trusted by businesses across South Africa</p>
+            <div className="mt-8 p-6 rounded-2xl border border-border glow-border overflow-hidden">
+              <p className="text-xs text-foreground/60 uppercase tracking-widest mb-5 text-center">Trusted by businesses across South Africa</p>
               <div className="relative">
                 <div className="flex animate-slide-logos items-center">
                   {[
@@ -105,7 +105,7 @@ export function About() {
             <ContactCard icon={<Phone size={18} />} title="Call Us" lines={["+27 21 023 1016"]} href="tel:+27210231016" accentColor="#e85d75" />
 
             {/* Small CTA */}
-            <a href="#contact" className="mt-2 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-blue text-white font-semibold text-sm hover:shadow-lg hover:shadow-brand-blue/20 transition-all">
+            <a href="#contact" className="mt-2 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-blue text-white font-semibold text-sm btn-glow glow-border transition-all">
               Start a Conversation
             </a>
           </div>
@@ -120,15 +120,15 @@ function ContactCard({ icon, title, lines, href, accentColor }: { icon: React.Re
   return (
     <Wrapper
       {...(href ? { href } : {})}
-      className="group flex items-start gap-4 p-5 rounded-xl border border-border bg-card hover:border-brand-blue/20 transition-all duration-300"
+      className="group flex items-start gap-4 p-5 rounded-xl border border-border glow-border hover:border-brand-blue/20 transition-all duration-300"
     >
-      <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: `${accentColor}12`, color: accentColor }}>
+      <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center glow-border" style={{ background: `${accentColor}12`, color: accentColor }}>
         {icon}
       </div>
       <div>
         <div className="text-sm font-semibold text-foreground mb-0.5">{title}</div>
         {lines.map((line) => (
-          <div key={line} className="text-sm text-muted-foreground">{line}</div>
+          <div key={line} className="text-sm text-foreground/80">{line}</div>
         ))}
       </div>
     </Wrapper>

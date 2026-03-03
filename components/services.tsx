@@ -6,6 +6,22 @@ import { Smartphone, Globe, LayoutDashboard, GraduationCap, ArrowRight, Check } 
 
 const services = [
   {
+    icon: <LayoutDashboard size={24} />,
+    title: "Dashboards & CRMs",
+    subtitle: "Data-Driven Solutions",
+    description:
+      "Custom dashboards and CRM systems that give you real-time visibility into your business. We build data-driven interfaces that streamline operations, automate workflows, and empower decision-making.",
+    details: [
+      "Real-time KPI dashboards & reporting",
+      "Custom CRM development",
+      "Sales pipeline & lead management",
+      "Automated workflows & notifications",
+      "API integrations with existing tools",
+    ],
+    tags: ["Dashboards", "CRM", "Analytics", "Automation"],
+    color: "#f5c518",
+  },
+  {
     icon: <Smartphone size={24} />,
     title: "Mobile App Development",
     subtitle: "Android & iOS",
@@ -36,22 +52,6 @@ const services = [
     ],
     tags: ["Next.js", "WordPress", "E-commerce", "SEO"],
     color: "#8ecfff",
-  },
-  {
-    icon: <LayoutDashboard size={24} />,
-    title: "Dashboards & CRMs",
-    subtitle: "Data-Driven Solutions",
-    description:
-      "Custom dashboards and CRM systems that give you real-time visibility into your business. We build data-driven interfaces that streamline operations, automate workflows, and empower decision-making.",
-    details: [
-      "Real-time KPI dashboards & reporting",
-      "Custom CRM development",
-      "Sales pipeline & lead management",
-      "Automated workflows & notifications",
-      "API integrations with existing tools",
-    ],
-    tags: ["Dashboards", "CRM", "Analytics", "Automation"],
-    color: "#f5c518",
   },
   {
     icon: <GraduationCap size={24} />,

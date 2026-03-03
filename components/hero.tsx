@@ -80,18 +80,18 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-6xl px-6 text-center pt-24">
-        <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border bg-secondary/40 backdrop-blur-sm mb-8 ${mounted ? "animate-fade-up" : "opacity-0"}`}>
+        <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border glow-border mb-8 ${mounted ? "animate-fade-up" : "opacity-0"}`}>
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-blue opacity-75" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-blue" />
           </span>
-          <span className="text-xs font-medium text-muted-foreground tracking-wide uppercase">
+          <span className="text-xs font-bold text-foreground tracking-wide uppercase">
             Cape Town&apos;s Premier ICT Systems Company
           </span>
         </div>
 
         <h1
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.08] tracking-tight text-balance mb-7 ${mounted ? "animate-fade-up delay-100" : "opacity-0"}`}
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.08] tracking-tight text-balance mb-7 ${mounted ? "animate-fade-up delay-100" : "opacity-0"} glow-text`}
           style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}
         >
           We Engineer{" "}
@@ -114,14 +114,14 @@ export function Hero() {
         <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 ${mounted ? "animate-fade-up delay-300" : "opacity-0"}`}>
           <a
             href="#services"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-blue text-white font-semibold hover:shadow-xl hover:shadow-brand-blue/20 hover:-translate-y-0.5 transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-blue text-white font-semibold btn-glow glow-border transition-all duration-300"
           >
             Explore Our Services
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border text-foreground font-semibold hover:bg-secondary/50 hover:-translate-y-0.5 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border text-foreground font-semibold glow-border hover:-translate-y-0.5 transition-all duration-300"
           >
             View Our Work
           </a>
@@ -131,9 +131,9 @@ export function Hero() {
         <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-10 border-t border-border ${mounted ? "animate-fade-up delay-500" : "opacity-0"}`}>
           {[
             { value: "50+", label: "Projects Delivered", color: "text-brand-blue" },
-            { value: "6+", label: "Years of Experience", color: "text-brand-yellow" },
-            { value: "100%", label: "Client Focused", color: "text-brand-lightblue" },
-            { value: "24/7", label: "Support Available", color: "text-brand-coral" },
+            { value: "10+", label: "Years of Experience", color: "text-brand-yellow" },
+            { value: "100%", label: "Client Satisfaction", color: "text-brand-lightblue" },
+            { value: "24h", label: "Response Time", color: "text-brand-coral" },
           ].map((stat) => (
             <div key={stat.label} className="text-center group">
               <div
