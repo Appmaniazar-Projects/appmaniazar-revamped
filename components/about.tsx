@@ -105,7 +105,12 @@ export function About() {
             <ContactCard icon={<Phone size={18} />} title="Call Us" lines={["+27 21 023 1016"]} href="tel:+27210231016" accentColor="#e85d75" />
 
             {/* Small CTA */}
-            <a href="#contact" className="mt-2 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-blue text-white font-semibold text-sm btn-glow glow-border transition-all">
+            <a 
+              href="mailto:info@appmaniazar.co.za?subject=Project%20Inquiry%20-%20About%20Page&body=Hi%20Appmaniazar%20Team,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.%0A%0ABest%20regards"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-blue text-white font-semibold text-sm btn-glow glow-border transition-all"
+            >
               Start a Conversation
             </a>
           </div>

@@ -88,8 +88,8 @@ export function Footer() {
             Appmaniazar. All Rights Reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-muted-foreground hover:text-brand-blue transition-colors">Privacy Policy</a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-brand-blue transition-colors">PAIA Manual</a>
+            <a href="/privacy-policy.pdf" className="text-xs text-muted-foreground hover:text-brand-blue transition-colors">Privacy Policy</a>
+            <a href="/paia-manual.pdf" className="text-xs text-muted-foreground hover:text-brand-blue transition-colors">PAIA Manual</a>
           </div>
         </div>
       </div>

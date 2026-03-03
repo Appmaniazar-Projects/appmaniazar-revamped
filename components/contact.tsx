@@ -38,7 +38,7 @@ export function Contact() {
               Ready to Build Your{" "}
               <span className="text-brand-blue">System</span>?
             </h2>
-            <p className={`text-muted-foreground leading-relaxed mb-8 text-pretty ${isVisible ? "animate-fade-up delay-200" : "opacity-0"}`}>
+            <p className={`text-foreground/80 leading-relaxed mb-8 text-pretty ${isVisible ? "animate-fade-up delay-200" : "opacity-0"}`}>
               Whether you need a mobile app, website, dashboard, CRM, or digital skills
               training — our team is ready to engineer a solution that scales.
               Let us start a conversation.
@@ -51,8 +51,8 @@ export function Contact() {
                 { label: "+27 21 023 1016", href: "tel:+27210231016", color: "#8ecfff" },
                 { label: "Cape Town & George Offices", href: "#about", color: "#f5c518" },
               ].map((item) => (
-                <a key={item.label} href={item.href} className="group inline-flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${item.color}12` }}>
+                <a key={item.label} href={item.href} className="group inline-flex items-center gap-3 text-sm text-foreground/80 hover:text-foreground transition-colors">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center glow-border" style={{ background: `${item.color}12` }}>
                     <ArrowRight size={14} style={{ color: item.color }} className="group-hover:translate-x-0.5 transition-transform" />
                   </div>
                   {item.label}
@@ -77,7 +77,7 @@ export function Contact() {
 
           {/* Right: Contact form */}
           <div className={`${isVisible ? "animate-slide-left delay-200" : "opacity-0"}`}>
-            <form onSubmit={handleSubmit} className="p-8 rounded-2xl border border-border bg-card">
+            <form onSubmit={handleSubmit} className="p-8 rounded-2xl border border-border glow-border">
               <h3 className="text-lg font-bold text-foreground mb-6" style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}>
                 Tell us about your project
               </h3>
@@ -89,7 +89,7 @@ export function Contact() {
                       id="name" type="text" required
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-secondary/30 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-brand-blue/50 focus:ring-2 focus:ring-brand-blue/20 transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-secondary/30 text-foreground placeholder:text-foreground/60 focus:outline-none focus:border-brand-blue/50 focus:ring-2 focus:ring-brand-blue/20 transition-all"
                       placeholder="John Doe"
                     />
                   </div>
@@ -99,7 +99,7 @@ export function Contact() {
                       id="company" type="text"
                       value={formState.company}
                       onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-secondary/30 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-brand-blue/50 focus:ring-2 focus:ring-brand-blue/20 transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-secondary/30 text-foreground placeholder:text-foreground/60 focus:outline-none focus:border-brand-blue/50 focus:ring-2 focus:ring-brand-blue/20 transition-all"
                       placeholder="Your Company"
                     />
                   </div>
@@ -126,7 +126,7 @@ export function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-blue text-white font-semibold hover:shadow-xl hover:shadow-brand-blue/20 hover:-translate-y-0.5 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-blue text-white font-semibold btn-glow glow-border hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Send Message
                   <Send size={16} className="group-hover:translate-x-1 transition-transform" />

@@ -50,7 +50,7 @@ export function Testimonials() {
             What Our Clients{" "}
             <span className="text-brand-blue">Say</span>
           </h2>
-          <p className={`text-muted-foreground max-w-2xl mx-auto leading-relaxed ${isVisible ? "animate-fade-up delay-200" : "opacity-0"}`}>
+          <p className={`text-foreground/80 max-w-2xl mx-auto leading-relaxed ${isVisible ? "animate-fade-up delay-200" : "opacity-0"}`}>
             We have worked with businesses across South Africa — building
             relationships that last beyond project delivery.
           </p>
@@ -60,7 +60,7 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className={`group relative p-8 rounded-2xl border border-border bg-card hover:border-brand-blue/20 transition-all duration-500 flex flex-col hover:-translate-y-1 ${
+              className={`group relative p-8 rounded-2xl border border-border glow-border hover:border-brand-blue/20 transition-all duration-500 flex flex-col hover:-translate-y-1 ${
                 isVisible ? `animate-fade-up delay-${(index + 1) * 100}` : "opacity-0"
               }`}
             >
@@ -73,7 +73,7 @@ export function Testimonials() {
 
               <Quote size={28} className="mb-4 opacity-15" style={{ color: testimonial.color }} />
 
-              <p className="text-muted-foreground leading-relaxed text-pretty flex-1 mb-6 text-sm">
+              <p className="text-foreground/80 leading-relaxed text-pretty flex-1 mb-6 text-sm">
                 {`"${testimonial.quote}"`}
               </p>
 
@@ -86,7 +86,7 @@ export function Testimonials() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-xs text-muted-foreground">{testimonial.role}, {testimonial.company}</div>
+                  <div className="text-xs text-foreground/80">{testimonial.role}, {testimonial.company}</div>
                 </div>
               </div>
             </div>

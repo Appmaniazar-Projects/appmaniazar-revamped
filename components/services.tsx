@@ -93,7 +93,7 @@ export function Services() {
             End-to-End Technology{" "}
             <span className="text-brand-blue">Services</span>
           </h2>
-          <p className={`text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty ${isVisible ? "animate-fade-up delay-200" : "opacity-0"}`}>
+          <p className={`text-foreground/80 max-w-2xl mx-auto leading-relaxed text-pretty ${isVisible ? "animate-fade-up delay-200" : "opacity-0"}`}>
             We go beyond functionality and design. Our systems-first methodology
             delivers interconnected solutions that scale with your business.
           </p>
@@ -107,8 +107,8 @@ export function Services() {
               onClick={() => setActiveIndex(index)}
               className={`flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                 activeIndex === index
-                  ? "bg-card border border-brand-blue/30 text-foreground shadow-lg shadow-brand-blue/5"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/50 border border-transparent"
+                  ? "bg-card border border-brand-blue/30 text-foreground shadow-lg shadow-brand-blue/5 glow-border"
+                  : "text-foreground/80 hover:text-foreground hover:bg-secondary/50 border border-transparent glow-border"
               }`}
             >
               <span style={{ color: activeIndex === index ? service.color : undefined }}>{service.icon}</span>
@@ -140,31 +140,37 @@ export function Services() {
 
 function ServiceDetail({ service }: { service: (typeof services)[0] }) {
   return (
-    <div className="grid lg:grid-cols-2 gap-8 p-8 lg:p-10 rounded-2xl border border-border bg-card">
+    <div className="grid lg:grid-cols-2 gap-8 p-8 lg:p-10 rounded-2xl border border-border glow-border">
       {/* Left: Info */}
       <div>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${service.color}12`, color: service.color }}>
+          <div className="w-12 h-12 rounded-xl flex items-center justify-center glow-border" style={{ background: `${service.color}12`, color: service.color }}>
             {service.icon}
           </div>
           <div>
             <h3 className="text-xl font-bold text-foreground" style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}>
               {service.title}
             </h3>
-            <span className="text-xs text-muted-foreground">{service.subtitle}</span>
+            <span className="text-xs text-foreground/80">{service.subtitle}</span>
           </div>
         </div>
-        <p className="text-muted-foreground leading-relaxed mb-6 text-pretty">
+        <p className="text-foreground/80 leading-relaxed mb-6 text-pretty">
           {service.description}
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
           {service.tags.map((tag) => (
-            <span key={tag} className="px-3 py-1 text-xs font-medium rounded-full border border-border text-muted-foreground bg-secondary/50">
+            <span key={tag} className="px-3 py-1 text-xs font-medium rounded-full border border-border text-foreground/80 bg-secondary/50">
               {tag}
             </span>
           ))}
         </div>
-        <a href="#contact" className="group inline-flex items-center gap-2 text-sm font-semibold transition-colors" style={{ color: service.color }}>
+        <a 
+          href="mailto:info@appmaniazar.co.za?subject=Project%20Inquiry%20-%20Services%20Page&body=Hi%20Appmaniazar%20Team,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.%0A%0ABest%20regards"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-2 text-sm font-semibold transition-colors" 
+          style={{ color: service.color }}
+        >
           Discuss your project
           <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
         </a>
@@ -179,7 +185,7 @@ function ServiceDetail({ service }: { service: (typeof services)[0] }) {
               <div className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5" style={{ background: `${service.color}15`, color: service.color }}>
                 <Check size={12} />
               </div>
-              <span className="text-sm text-muted-foreground leading-relaxed">{detail}</span>
+              <span className="text-sm text-foreground/80 leading-relaxed">{detail}</span>
             </li>
           ))}
         </ul>

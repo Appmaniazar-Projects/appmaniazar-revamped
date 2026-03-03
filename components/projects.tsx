@@ -4,56 +4,107 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { useState } from "react"
 import { ArrowUpRight } from "lucide-react"
 
-const categories = ["All", "Web Development", "Apps Development", "Dashboards & CRMs", "Digital Skills Training"]
+const categories = ["All", "Dashboards & CRMs", "Web Development", "Apps Development", "Digital Skills Training"]
 
 const projects = [
   {
-    title: "ZiboneleFM Platform",
+    title: "MSI Learning Platform",
     category: "Web Development",
     description:
-      "Complete website overhaul for ZiboneleFM radio station — featuring live stream integration, show schedules, and a modern content management system.",
-    outcome: "300% increase in online engagement",
+      "Modern educational website for Maths & Science Infinity — designed to showcase academic programs, student resources, and community impact with a clean, professional digital presence.",
+    outcome: "Educational Platform Excellence",
     color: "#1a6dff",
+    url: "https://www.mathsandscienceinfinity.org.za/",
   },
   {
-    title: "PlanetGuardian App",
-    category: "Apps Development",
+    title: "Bongani Music Creations",
+    category: "Web Development",
     description:
-      "Cross-platform mobile application for the PlanetGuardian environmental program — connecting guardians, tracking impact, and managing local activities.",
-    outcome: "Deployed across 5 regions",
+      "Creative portfolio website for a music production brand — highlighting services, musical projects, and brand identity with an engaging, performance-driven design.",
+    outcome: "Creative Portfolio Platform",
     color: "#8ecfff",
+    url: "https://bonganimusic.com/",
   },
   {
     title: "Lindwa Communications",
     category: "Web Development",
     description:
-      "Full brand identity and website redesign — modern, fresh digital presence that perfectly matches the Lindwa Communications brand voice.",
-    outcome: "Complete digital transformation",
+      "Corporate brand website built to communicate services, credibility, and digital transformation expertise — delivering a refined and conversion-focused experience.",
+    outcome: "Corporate Digital Transformation",
     color: "#f5c518",
+    url: "https://www.lindwacommunications.com/",
   },
   {
-    title: "E-Commerce Platform",
+    title: "VL Media",
     category: "Web Development",
     description:
-      "Scalable e-commerce solution with integrated payment gateways, inventory management, and optimised checkout flows for South African businesses.",
-    outcome: "45% conversion rate improvement",
+      "Dynamic media and creative agency website — crafted to showcase storytelling, visual projects, and digital marketing solutions with a bold, modern interface.",
+    outcome: "Media Agency Platform",
     color: "#e85d75",
+    url: "https://vlmedia.co.za/",
   },
   {
-    title: "Operations Dashboard",
-    category: "Dashboards & CRMs",
+    title: "Ponontle Group",
+    category: "Web Development",
     description:
-      "Real-time operations dashboard with KPI tracking, automated reports, and team performance metrics — giving management complete visibility.",
-    outcome: "80% faster decision-making",
+      "South African company website — showcasing IT, project management, business consulting, construction, and education services through efficient, budget-conscious solutions.",
+    outcome: "Corporate Solutions Platform",
     color: "#1a6dff",
+    url: "https://www.ponontle.co.za/",
   },
   {
-    title: "Client CRM System",
+    title: "Zibonele FM Dashboard",
     category: "Dashboards & CRMs",
     description:
-      "Custom CRM platform for managing client relationships, sales pipelines, and automated follow-ups — built to scale with growing teams.",
-    outcome: "Used by 100+ businesses",
+      "Admin dashboard for managing Zibonele FM mobile app — providing real-time analytics, content management, and user engagement tools for seamless radio station operations.",
+    outcome: "Radio Management System",
+    color: "#f5c518",
+    url: "https://zibonele-fm-dashboard.vercel.app/",
+  },
+  {
+    title: "Thuto School Relationship Platform",
+    category: "Dashboards & CRMs",
+    description:
+      "Educational relationship management system — connecting schools, students, and parents with comprehensive communication tools and academic tracking capabilities.",
+    outcome: "Educational CRM Excellence",
     color: "#8ecfff",
+    url: "https://thuto.app/",
+  },
+  {
+    title: "Tech Poxi Business System",
+    category: "Dashboards & CRMs",
+    description:
+      "Business form creation and management platform — streamlining data collection, workflow automation, and business process optimization for modern enterprises.",
+    outcome: "Business Process Automation",
+    color: "#e85d75",
+    url: null,
+  },
+  {
+    title: "Zibonele FM App",
+    category: "Apps Development",
+    description:
+      "Cross-platform mobile application for Zibonele FM radio station — featuring live streaming, show schedules, and interactive listener engagement features.",
+    outcome: "Radio Mobile Experience",
+    color: "#1a6dff",
+    url: "https://play.google.com/store/apps/details?id=io.ionic.zibonelefm1234&hl=en_ZA",
+  },
+  {
+    title: "Tapps Dam Level Management",
+    category: "Apps Development",
+    description:
+      "Mobile application for dam level monitoring across all provinces — featuring real-time geolocation tracking, weather integration, and comprehensive water management analytics.",
+    outcome: "National Water Management System",
+    color: "#8ecfff",
+    url: "https://play.google.com/store/apps/details?id=com.tapps.appmaniazar&hl=en_ZA",
+  },
+  {
+    title: "Digital Skills Training Program",
+    category: "Digital Skills Training",
+    description:
+      "Comprehensive web development training program for beginners from disadvantaged backgrounds — offering hands-on coding experience, mentorship, and pathways to tech careers.",
+    outcome: "Tech Skills Empowerment Initiative",
+    color: "#f5c518",
+    url: null,
   },
 ]
 
@@ -82,7 +133,7 @@ export function Projects() {
           >
             Featured <span className="text-brand-blue">Projects</span>
           </h2>
-          <p className={`text-muted-foreground max-w-2xl mx-auto leading-relaxed ${isVisible ? "animate-fade-up delay-200" : "opacity-0"}`}>
+          <p className={`text-foreground/80 max-w-2xl mx-auto leading-relaxed ${isVisible ? "animate-fade-up delay-200" : "opacity-0"}`}>
             A selection of systems we have engineered for businesses across South Africa — from fresh builds to transformative rescues.
           </p>
         </div>
@@ -95,8 +146,8 @@ export function Projects() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2.5 text-sm rounded-full border transition-all duration-300 ${
                 activeCategory === cat
-                  ? "bg-brand-blue text-white border-brand-blue shadow-lg shadow-brand-blue/15"
-                  : "bg-transparent text-muted-foreground border-border hover:border-brand-blue/30 hover:text-foreground"
+                  ? "bg-brand-blue text-white border-brand-blue shadow-lg shadow-brand-blue/15 glow-border"
+                  : "bg-transparent text-foreground/80 border-border hover:border-brand-blue/30 hover:text-foreground glow-border"
               }`}
             >
               {cat}
@@ -117,8 +168,44 @@ export function Projects() {
 
 function ProjectCard({ project, isVisible, index }: { project: (typeof projects)[0]; isVisible: boolean; index: number }) {
   const delayClass = `delay-${Math.min((index + 2) * 100, 600)}`
+  
+  if (project.url) {
+    return (
+      <a 
+        href={project.url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={`group relative block p-7 rounded-2xl border border-border glow-border hover:border-brand-blue/20 transition-all duration-500 flex flex-col hover:-translate-y-1 ${isVisible ? `animate-scale-in ${delayClass}` : "opacity-0"}`}
+      >
+        {/* Geometric header */}
+        <div className="h-36 mb-6 rounded-xl border border-border flex items-center justify-center overflow-hidden relative" style={{ background: `${project.color}04` }}>
+          <ProjectGeometry index={index} color={project.color} />
+        </div>
+
+        <span className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: project.color }}>
+          {project.category}
+        </span>
+        <h3
+          className="text-lg font-bold text-foreground mb-2 group-hover:text-brand-blue transition-colors"
+          style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}
+        >
+          {project.title}
+        </h3>
+        <p className="text-sm text-foreground/80 leading-relaxed mb-4 flex-1 text-pretty">
+          {project.description}
+        </p>
+        <div className="flex items-center justify-between pt-4 border-t border-border">
+          <span className="text-xs font-semibold" style={{ color: project.color }}>
+            {project.outcome}
+          </span>
+          <ArrowUpRight size={16} className="text-foreground/80 group-hover:text-brand-blue group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+        </div>
+      </a>
+    )
+  }
+
   return (
-    <div className={`group relative p-7 rounded-2xl border border-border bg-card hover:border-brand-blue/20 transition-all duration-500 flex flex-col hover:-translate-y-1 ${isVisible ? `animate-scale-in ${delayClass}` : "opacity-0"}`}>
+    <div className={`group relative p-7 rounded-2xl border border-border glow-border hover:border-brand-blue/20 transition-all duration-500 flex flex-col hover:-translate-y-1 ${isVisible ? `animate-scale-in ${delayClass}` : "opacity-0"}`}>
       {/* Geometric header */}
       <div className="h-36 mb-6 rounded-xl border border-border flex items-center justify-center overflow-hidden relative" style={{ background: `${project.color}04` }}>
         <ProjectGeometry index={index} color={project.color} />
@@ -133,14 +220,14 @@ function ProjectCard({ project, isVisible, index }: { project: (typeof projects)
       >
         {project.title}
       </h3>
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1 text-pretty">
+      <p className="text-sm text-foreground/80 leading-relaxed mb-4 flex-1 text-pretty">
         {project.description}
       </p>
       <div className="flex items-center justify-between pt-4 border-t border-border">
         <span className="text-xs font-semibold" style={{ color: project.color }}>
           {project.outcome}
         </span>
-        <ArrowUpRight size={16} className="text-muted-foreground group-hover:text-brand-blue group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+        <ArrowUpRight size={16} className="text-foreground/80 group-hover:text-brand-blue group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
       </div>
     </div>
   )

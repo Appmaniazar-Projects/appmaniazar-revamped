@@ -103,18 +103,20 @@ export function Approach() {
         </div>
 
         {/* CTA band */}
-        <div className={`mt-20 p-8 md:p-12 rounded-2xl border border-border bg-card flex flex-col md:flex-row items-center justify-between gap-6 ${isVisible ? "animate-fade-up delay-600" : "opacity-0"}`}>
+        <div className={`mt-20 p-8 md:p-12 rounded-2xl border border-border glow-border flex flex-col md:flex-row items-center justify-between gap-6 ${isVisible ? "animate-fade-up delay-600" : "opacity-0"}`}>
           <div>
             <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}>
               Ready to start your project?
             </h3>
-            <p className="text-muted-foreground text-pretty">
+            <p className="text-foreground/80 text-pretty">
               Let us engineer a system that transforms your business. No obligation, just a conversation.
             </p>
           </div>
           <a
-            href="#contact"
-            className="flex-shrink-0 px-8 py-4 rounded-xl bg-brand-blue text-white font-semibold hover:shadow-xl hover:shadow-brand-blue/20 hover:-translate-y-0.5 transition-all duration-300"
+            href="mailto:info@appmaniazar.co.za?subject=Project%20Inquiry%20-%20Approach%20Page&body=Hi%20Appmaniazar%20Team,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.%0A%0ABest%20regards"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 px-8 py-4 rounded-xl bg-brand-blue text-white font-semibold btn-glow glow-border hover:-translate-y-0.5 transition-all duration-300"
           >
             Start a Conversation
           </a>
