@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     'dashboards and CRMs',
     'digital skills training',
   ],
+  icons: {
+    icon: '/images/Appmania_Favicon.png',
+    shortcut: '/images/Appmania_Favicon.png',
+    apple: '/images/Appmania_Favicon.png',
+  },
 }
 
 export const viewport: Viewport = {

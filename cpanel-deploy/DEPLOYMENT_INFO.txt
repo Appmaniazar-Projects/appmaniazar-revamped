@@ -1,0 +1,28 @@
+Appmaniazar Website - cPanel Deployment
+==========================================
+
+Deployment Date: Wed Mar  4 11:52:33 SAST 2026
+Next.js Version: 16.1.6 deduped
+16.1.6
+Build Mode: Static Export (output: export)
+
+Files to Upload:
+- All files in this directory
+- Upload to your cPanel public_html or desired subdirectory
+- Ensure .htaccess file is uploaded
+
+Post-Upload Steps:
+1. Verify .htaccess is working (check URL routing)
+2. Test all navigation links
+3. Verify images and assets load correctly
+4. Test WhatsApp button functionality
+5. Test all external links
+
+Notes:
+- This is a static export build (Next.js 16+)
+- No server-side rendering
+- All routing is client-side
+- Images are in the images/ folder
+- PDFs are in the root folder
+
+For support, check the Next.js static export documentation.
