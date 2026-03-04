@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { Facebook, Instagram } from "lucide-react"
 
 export function Footer() {
   return (
@@ -40,7 +41,6 @@ export function Footer() {
                 { label: "Services", href: "#services" },
                 { label: "Our Approach", href: "#approach" },
                 { label: "Projects", href: "#projects" },
-                { label: "Contact Us", href: "#contact" },
               ].map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="text-sm text-muted-foreground hover:text-brand-blue transition-colors">{link.label}</a>
@@ -69,9 +69,27 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-5">Get In Touch</h4>
-            <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <li>19 Brug Street, Bellville, Cape Town</li>
-              <li>8 St. John&apos;s Street, George, 6529</li>
+            <ul className="flex flex-col gap-3 text-sm text-muted-foreground mb-4">
+              <li>
+                <a 
+                  href="https://maps.google.com/?q=19+Brug+Street+Bellville+Cape+Town" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-blue transition-colors"
+                >
+                  19 Brug Street, Bellville, Cape Town
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://maps.google.com/?q=8+St.+John's+Street+George+6529" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-blue transition-colors"
+                >
+                  8 St. John&apos;s Street, George, 6529
+                </a>
+              </li>
               <li>
                 <a href="tel:+27210231016" className="hover:text-brand-blue transition-colors">+27 21 023 1016</a>
               </li>
@@ -79,6 +97,26 @@ export function Footer() {
                 <a href="mailto:info@appmaniazar.co.za" className="hover:text-brand-blue transition-colors">info@appmaniazar.co.za</a>
               </li>
             </ul>
+            
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-4 pt-4 border-t border-border">
+              <a 
+                href="https://www.facebook.com/share/1Btsb981Yx/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-border hover:border-brand-blue/50 hover:text-brand-blue transition-all duration-300 glow-border"
+              >
+                <Facebook size={18} />
+              </a>
+              <a 
+                href="https://www.instagram.com/appmaniazar?igsh=cDg4NnQ2MGFhNG1q" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-border hover:border-pink-500/50 hover:text-pink-500 transition-all duration-300 glow-border"
+              >
+                <Instagram size={18} />
+              </a>
+            </div>
           </div>
         </div>
 
