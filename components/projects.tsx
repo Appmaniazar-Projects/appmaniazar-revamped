@@ -71,7 +71,7 @@ const projects = [
     url: "https://thuto.app/",
   },
   {
-    title: "Tech Poxi Business System",
+    title: "Tech Pozi Business System",
     category: "Dashboards & CRMs",
     description:
       "Business form creation and management platform — streamlining data collection, workflow automation, and business process optimization for modern enterprises.",
