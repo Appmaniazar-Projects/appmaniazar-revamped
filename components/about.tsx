@@ -73,16 +73,26 @@ export function About() {
               <div className="relative">
                 <div className="flex animate-slide-logos items-center">
                   {[
-                    "/partner images/Zibonele - Logo.jpg",
-                    "/partner images/MSI - Logo.jpeg", 
-                    "/partner images/LC - Logo.jpg",
-                    "/partner images/BMC - Logo.jpg",
-                    "/partner images/Ponontle - Logo.jpg",
-                    "/partner images/Zibonele - Logo.jpg",
-                    "/partner images/MSI - Logo.jpeg",
-                    "/partner images/LC - Logo.jpg", 
-                    "/partner images/BMC - Logo.jpg",
-                    "/partner images/Ponontle - Logo.jpg"
+                    "/partner images/Zibonele - Logo.png",
+                    "/partner images/MSI - Logo.png", 
+                    "/partner images/LC - Logo.png",
+                    "/partner images/BMC - Logo.png",
+                    "/partner images/Ponontle - Logo.png",
+                    "/partner images/SADICO - Logo.png",
+                    "/partner images/Zibonele - Logo.png",
+                    "/partner images/MSI - Logo.png",
+                    "partner images/TechPozi - Logo.png",
+                    "partner images/SiyaMed - Logo.png",
+                    "partner images/Thuto - Logo.png",
+                    "/partner images/LC - Logo.png", 
+                    "/partner images/BMC - Logo.png",
+                    "/partner images/Ponontle - Logo.png",
+                    "/partner images/SADICO - Logo.png",
+                    "partner images/TechPozi - Logo.png",
+                    "partner images/SiyaMed - Logo.png",  
+                    "partner images/Thuto - Logo.png",
+                    
+
                   ].map((src, index) => (
                     <div key={index} className="flex-shrink-0 px-4 lg:px-8">
                       <Image 
