@@ -165,13 +165,13 @@ function ServiceDetail({ service }: { service: (typeof services)[0] }) {
           ))}
         </div>
         <a 
-          href="mailto:info@appmaniazar.co.za?subject=Project%20Inquiry%20-%20Services%20Page&body=Hi%20Appmaniazar%20Team,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.%0A%0ABest%20regards"
-          target="_blank"
+          href={service.title === "Digital Skills Training" ? "/blog" : "mailto:info@appmaniazar.co.za?subject=Project%20Inquiry%20-%20Services%20Page&body=Hi%20Appmaniazar%20Team,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.%0A%0ABest%20regards"}
+          target={service.title === "Digital Skills Training" ? "_self" : "_blank"}
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 text-sm font-semibold transition-colors" 
           style={{ color: service.color }}
         >
-          Discuss your project
+          {service.title === "Digital Skills Training" ? "View our blog" : "Discuss your project"}
           <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
         </a>
       </div>

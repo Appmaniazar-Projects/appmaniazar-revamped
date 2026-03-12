@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 const links = [
   { label: "Home", href: "/" },
@@ -17,6 +18,7 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -50,9 +52,16 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="relative px-3.5 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50"
+              className={`relative px-3.5 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50 ${
+                (pathname === link.href) || (pathname?.includes('/blog') && link.label === "Blog") || (pathname?.includes('/#') && link.href === pathname)
+                  ? "text-brand-blue bg-secondary/50"
+                  : ""
+              }`}
             >
               {link.label}
+              {(pathname === link.href) || (pathname?.includes('/blog') && link.label === "Blog") || (pathname?.includes('/#') && link.href === pathname) && (
+                <span className="absolute bottom-0 left-1/2 w-8 h-0.5 bg-brand-blue rounded-full"></span>
+              )}
             </a>
           ))}
           <a
@@ -82,9 +91,16 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                className={`px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors ${
+                  (pathname === link.href) || (pathname?.includes('/blog') && link.label === "Blog") || (pathname?.includes('/#') && link.href === pathname)
+                    ? "text-brand-blue bg-secondary/50"
+                    : ""
+                }`}
               >
                 {link.label}
+                {(pathname === link.href) || (pathname?.includes('/blog') && link.label === "Blog") || (pathname?.includes('/#') && link.href === pathname) && (
+                  <span className="absolute bottom-0 left-1/2 w-8 h-0.5 bg-brand-blue rounded-full"></span>
+                )}
               </a>
             ))}
             <a

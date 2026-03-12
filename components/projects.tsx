@@ -1,8 +1,9 @@
 "use client"
 
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ArrowUpRight } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 const categories = ["All", "Dashboards & CRMs", "Web Development", "App Development", "Digital Skills Training"]
 
@@ -104,13 +105,23 @@ const projects = [
       "Comprehensive web development training program for beginners from disadvantaged backgrounds — offering hands-on coding experience, mentorship, and pathways to tech careers.",
     outcome: "Tech Skills Empowerment Initiative",
     color: "#f5c518",
-    url: null,
+    url: "/blog",
   },
 ]
 
 export function Projects() {
   const { ref: sectionRef, isVisible } = useScrollAnimation(0.05)
+  const pathname = usePathname()
   const [activeCategory, setActiveCategory] = useState("All")
+
+  // Set active category based on current page
+  useEffect(() => {
+    if (pathname?.includes('/blog')) {
+      setActiveCategory("Digital Skills Training")
+    } else {
+      setActiveCategory("All")
+    }
+  }, [pathname])
 
   const filteredProjects =
     activeCategory === "All"
@@ -173,8 +184,8 @@ function ProjectCard({ project, isVisible, index }: { project: (typeof projects)
     return (
       <a 
         href={project.url} 
-        target="_blank" 
-        rel="noopener noreferrer"
+        target={project.url.startsWith('http') ? "_blank" : "_self"} 
+        rel={project.url.startsWith('http') ? "noopener noreferrer" : ""}
         className={`group relative block p-7 rounded-2xl border border-border glow-border hover:border-brand-blue/20 transition-all duration-500 flex flex-col hover:-translate-y-1 ${isVisible ? `animate-scale-in ${delayClass}` : "opacity-0"}`}
       >
         {/* Geometric header */}

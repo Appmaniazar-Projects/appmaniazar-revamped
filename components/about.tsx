@@ -111,10 +111,34 @@ export function About() {
 
           {/* Right: Contact cards */}
           <div className={`lg:col-span-2 flex flex-col gap-3 lg:gap-4 ${isVisible ? "animate-slide-left delay-300" : "opacity-0"}`}>
-            <ContactCard icon={<MapPin size={16} />} title="Cape Town Office" lines={["19 Brug Street, Triangle", "Bellville, Cape Town"]} accentColor="#1a6dff" />
-            <ContactCard icon={<MapPin size={16} />} title="George Office" lines={["8 St. John's Street", "Dormehls Drift, George, 6529"]} accentColor="#8ecfff" />
-            <ContactCard icon={<Mail size={16} />} title="Email Us" lines={["info@appmaniazar.co.za"]} href="mailto:info@appmaniazar.co.za" accentColor="#f5c518" />
-            <ContactCard icon={<Phone size={16} />} title="Call Us" lines={["+27 21 023 1016"]} href="tel:+27210231016" accentColor="#e85d75" />
+            <ContactCard 
+              icon={<MapPin size={16} />} 
+              title="Cape Town Office" 
+              lines={["19 Brug Street, Triangle", "Bellville, Cape Town"]} 
+              href="https://maps.google.com/?q=19+Brug+Street+Triangle+Bellville+Cape+Town" 
+              accentColor="#1a6dff" 
+            />
+            <ContactCard 
+              icon={<MapPin size={16} />} 
+              title="George Office" 
+              lines={["8 St. John's Street", "Dormehls Drift, George, 6529"]} 
+              href="https://maps.google.com/?q=8+St.+John's+Street+Dormehls+Drift+George+6529" 
+              accentColor="#8ecfff" 
+            />
+            <ContactCard 
+              icon={<Mail size={16} />} 
+              title="Email Us" 
+              lines={["info@appmaniazar.co.za"]} 
+              href="mailto:info@appmaniazar.co.za" 
+              accentColor="#f5c518" 
+            />
+            <ContactCard 
+              icon={<Phone size={16} />} 
+              title="Call Us" 
+              lines={["+27 21 023 1016"]} 
+              href="tel:+27210231016" 
+              accentColor="#e85d75" 
+            />
 
             {/* Small CTA */}
             <a 
