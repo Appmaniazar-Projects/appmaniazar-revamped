@@ -54,22 +54,22 @@ export function About() {
         </div>
 
         {/* About + Contact split */}
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+        <div className="grid xl:grid-cols-5 gap-8 xl:gap-12 items-start">
           {/* Left: Brand system diagram */}
-          <div className={`lg:col-span-3 ${isVisible ? "animate-fade-up delay-400" : "opacity-0"}`}>
-            <div className="p-6 lg:p-8 rounded-2xl border border-border glow-border">
-              <h3 className="text-base lg:text-lg font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}>
+          <div className={`xl:col-span-3 ${isVisible ? "animate-fade-up delay-400" : "opacity-0"}`}>
+            <div className="p-4 sm:p-6 lg:p-8 rounded-2xl border border-border glow-border">
+              <h3 className="text-base sm:text-lg lg:text-lg font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-space-grotesk), var(--font-sans)" }}>
                 Our Development Ecosystem
               </h3>
-              <p className="text-xs lg:text-sm text-foreground/80 mb-6 lg:mb-8">How we connect every phase of your project into one unified system.</p>
+              <p className="text-xs sm:text-sm lg:text-sm text-foreground/80 mb-4 sm:mb-6 lg:mb-8">How we connect every phase of your project into one unified system.</p>
               <div className="w-full overflow-x-auto">
                 <BrandSystemDiagram />
               </div>
             </div>
 
             {/* Logos strip */}
-            <div className="mt-6 lg:mt-8 p-4 lg:p-6 rounded-2xl border border-border glow-border overflow-hidden">
-              <p className="text-xs text-foreground/60 uppercase tracking-widest mb-3 lg:mb-5 text-center">Trusted by businesses across South Africa</p>
+            <div className="mt-4 sm:mt-6 lg:mt-8 p-3 sm:p-4 lg:p-6 rounded-2xl border border-border glow-border overflow-hidden">
+              <p className="text-xs text-foreground/60 uppercase tracking-widest mb-2 sm:mb-3 lg:mb-5 text-center">Trusted by businesses across South Africa</p>
               <div className="relative">
                 <div className="flex animate-slide-logos items-center">
                   {[
@@ -94,13 +94,13 @@ export function About() {
                     
 
                   ].map((src, index) => (
-                    <div key={index} className="flex-shrink-0 px-4 lg:px-8">
+                    <div key={index} className="flex-shrink-0 px-2 sm:px-3 lg:px-6 xl:px-8">
                       <Image 
                         src={src} 
                         alt={`Partner logo ${index + 1}`}
-                        width={100}
-                        height={50}
-                        className="h-8 lg:h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                        width={80}
+                        height={40}
+                        className="h-6 sm:h-8 lg:h-10 xl:h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
                       />
                     </div>
                   ))}
@@ -110,7 +110,7 @@ export function About() {
           </div>
 
           {/* Right: Contact cards */}
-          <div className={`lg:col-span-2 flex flex-col gap-3 lg:gap-4 ${isVisible ? "animate-slide-left delay-300" : "opacity-0"}`}>
+          <div className={`xl:col-span-2 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-3 lg:gap-4 ${isVisible ? "animate-slide-left delay-300" : "opacity-0"}`}>
             <ContactCard 
               icon={<MapPin size={16} />} 
               title="Cape Town Office" 
@@ -178,33 +178,37 @@ function ContactCard({ icon, title, lines, href, accentColor }: { icon: React.Re
 
 function BrandSystemDiagram() {
   return (
-    <svg viewBox="0 0 580 180" fill="none" className="w-full">
+    <svg viewBox="0 0 580 180" fill="none" className="w-full h-auto min-w-[320px] max-w-full">
       {/* Nodes */}
       {[
-        { x: 20, y: 60, w: 90, h: 60, label: "Strategy", color: "#1a6dff" },
-        { x: 150, y: 10, w: 90, h: 60, label: "Design", color: "#8ecfff" },
-        { x: 150, y: 110, w: 90, h: 60, label: "Develop", color: "#f5c518" },
-        { x: 300, y: 60, w: 90, h: 60, label: "Test", color: "#e85d75" },
-        { x: 430, y: 30, w: 90, h: 50, label: "Deploy", color: "#1a6dff" },
-        { x: 430, y: 100, w: 90, h: 50, label: "Scale", color: "#8ecfff" },
+        { x: 20, y: 60, w: 80, h: 50, label: "Strategy", color: "#1a6dff" },
+        { x: 130, y: 15, w: 80, h: 50, label: "Design", color: "#8ecfff" },
+        { x: 130, y: 115, w: 80, h: 50, label: "Develop", color: "#f5c518" },
+        { x: 240, y: 60, w: 80, h: 50, label: "Test", color: "#e85d75" },
+        { x: 350, y: 30, w: 80, h: 45, label: "Deploy", color: "#1a6dff" },
+        { x: 350, y: 105, w: 80, h: 45, label: "Scale", color: "#8ecfff" },
+        { x: 460, y: 60, w: 80, h: 50, label: "Support", color: "#f5c518" },
       ].map((node) => (
         <g key={node.label}>
-          <rect x={node.x} y={node.y} width={node.w} height={node.h} rx="10" fill={`${node.color}10`} stroke={`${node.color}30`} strokeWidth="1" />
-          <text x={node.x + node.w / 2} y={node.y + node.h / 2 + 4} textAnchor="middle" fill={node.color} fontSize="11" fontFamily="var(--font-sans)">{node.label}</text>
+          <rect x={node.x} y={node.y} width={node.w} height={node.h} rx="8" fill={`${node.color}10`} stroke={`${node.color}30`} strokeWidth="1" />
+          <text x={node.x + node.w / 2} y={node.y + node.h / 2 + 3} textAnchor="middle" fill={node.color} fontSize="10" fontFamily="var(--font-sans)">{node.label}</text>
         </g>
       ))}
       {/* Connections */}
-      <path d="M110 85 L150 40" stroke="#1a6dff" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="4 3" />
-      <path d="M110 95 L150 140" stroke="#1a6dff" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="4 3" />
-      <path d="M240 40 L300 85" stroke="#8ecfff" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="4 3" />
-      <path d="M240 140 L300 95" stroke="#f5c518" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="4 3" />
-      <path d="M390 80 L430 55" stroke="#e85d75" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="4 3" />
-      <path d="M390 95 L430 120" stroke="#e85d75" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="4 3" />
+      <path d="M100 85 L130 40" stroke="#1a6dff" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="3 2" />
+      <path d="M100 95 L130 140" stroke="#1a6dff" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="3 2" />
+      <path d="M210 40 L240 85" stroke="#8ecfff" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="3 2" />
+      <path d="M210 140 L240 95" stroke="#f5c518" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="3 2" />
+      <path d="M320 80 L350 52" stroke="#e85d75" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="3 2" />
+      <path d="M320 95 L350 127" stroke="#e85d75" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="3 2" />
+      <path d="M430 52 L460 85" stroke="#1a6dff" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="3 2" />
+      <path d="M430 127 L460 85" stroke="#8ecfff" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="3 2" />
       {/* Dot accents */}
-      <circle cx="110" cy="90" r="3" fill="#1a6dff" fillOpacity="0.3" />
-      <circle cx="300" cy="90" r="3" fill="#e85d75" fillOpacity="0.3" />
-      <circle cx="430" cy="55" r="3" fill="#1a6dff" fillOpacity="0.3" />
-      <circle cx="430" cy="120" r="3" fill="#8ecfff" fillOpacity="0.3" />
+      <circle cx="100" cy="90" r="2.5" fill="#1a6dff" fillOpacity="0.3" />
+      <circle cx="240" cy="90" r="2.5" fill="#e85d75" fillOpacity="0.3" />
+      <circle cx="350" cy="52" r="2.5" fill="#1a6dff" fillOpacity="0.3" />
+      <circle cx="350" cy="127" r="2.5" fill="#8ecfff" fillOpacity="0.3" />
+      <circle cx="460" cy="85" r="2.5" fill="#f5c518" fillOpacity="0.3" />
     </svg>
   )
 }

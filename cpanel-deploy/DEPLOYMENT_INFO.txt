@@ -1,9 +1,8 @@
-Appmaniazar Website - cPanel Deployment
+﻿Appmaniazar Website - cPanel Deployment
 ==========================================
 
-Deployment Date: Mon Mar  9 11:56:55 SAST 2026
-Next.js Version: 16.1.6 deduped
-16.1.6
+Deployment Date: 2026-03-28 17:03:39
+Next.js Version: 16.1.6 16.1.6
 Build Mode: Static Export (output: export)
 
 Files to Upload:

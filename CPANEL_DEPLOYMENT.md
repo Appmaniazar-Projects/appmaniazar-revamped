@@ -4,8 +4,11 @@
 
 ### 1. Prepare the Build
 ```bash
-# Run the deployment script
+# Run the deployment script (Windows)
 npm run deploy:cpanel
+
+# Or run manually with PowerShell
+powershell -ExecutionPolicy Bypass -File deploy-cpanel.ps1
 ```
 
 ### 2. Upload Files to cPanel

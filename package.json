@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint .",
     "build:export": "npm run build",
-    "deploy:cpanel": "chmod +x deploy-cpanel.sh && ./deploy-cpanel.sh"
+    "deploy:cpanel": "powershell -ExecutionPolicy Bypass -File deploy-cpanel.ps1"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
